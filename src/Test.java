@@ -7,18 +7,32 @@ public class Test {
         Product[] pro = new Product[2];
 
         Scanner scan = new Scanner(System.in);
-        System.out.println("Podaj nazwę pierwszego produktu:");
-        pro[0].setName(scan.nextLine());
-        System.out.println("Podaj nazwę producenta:");
-        pro[0].setProducer(scan.nextLine());
-        System.out.println("Podaj cenę:");
-        pro[0].setPrice(scan.nextDouble());
-        System.out.println("Podaj nazwę drugiego produktu:");
-        pro[1].setName(scan.nextLine());
-        System.out.println("Podaj producenta:");
-        pro[1].setProducer(scan.nextLine());
-        System.out.println("Podaj cenę:");
-        pro[1].setPrice(scan.nextDouble());
 
+        for (int i = 0; i <= 2; i++) {
+
+            System.out.println("Podaj nazwy produktów");
+            pro[i].setName(scan.nextLine());
+
+            if (pro[0].setName(scan.nextLine()) == pro[1].setName(scan.nextLine())) {
+                System.out.println("W tablicy jest już taki element");
+            } else {
+                System.out.println("Podaj nazwę");
+                pro[i].setName(scan.nextLine());
+                {
+
+            System.out.println("Podaj cenę:");
+            pro[i].setPrice(scan.nextDouble());
+
+            if (pro[0].setPrice(scan.nextDouble() == pro[1].setPrice(scan.nextDouble())) {
+                    System.out.println("W tablicy jest już taki element");
+                } else{
+                    System.out.println("Podaj cenę");
+                    pro[i].setPrice(scan.nextDouble());
+
+                }
+
+                }
+            }
+        }
     }
 }

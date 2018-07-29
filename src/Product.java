@@ -1,14 +1,10 @@
+import java.util.Objects;
+
 public class Product {
 
     private String name;
-    private String producer;
     private double price;
 
-    public Product(String name, String producer, double price) {
-        this.name = name;
-        this.producer = producer;
-        this.price = price;
-    }
 
     public String getName() {
         return name;
@@ -18,14 +14,6 @@ public class Product {
         this.name = name;
     }
 
-    public String getProducer() {
-        return producer;
-    }
-
-    public void setProducer(String producer) {
-        this.producer = producer;
-    }
-
     public double getPrice() {
         return price;
     }
@@ -33,4 +21,21 @@ public class Product {
     public void setPrice(double price) {
         this.price = price;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Product product = (Product) o;
+        return Double.compare(product.price, price) == 0 &&
+                Objects.equals(name, product.name);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(name, price);
+    }
 }
+
+
